@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+/*  ** 基本布局
+================================================================================
+页面的基本布局和统一样式  
+================================================================================
+*/
+@import "_page.css";
+
+/*  ** 小工具类
+================================================================================
+一些辅助用的小工具  
+================================================================================
+*/
+@import "_tools.css";
+
+
+/*  ** 修复
+================================================================================
+问题修复  
+================================================================================
+*/
+@import "_fix.css";
+
+
+/*  &2.5 登录/注册 */
+
+#form-frame {
+    padding: 1em 2em;
+}
+
+#login-wrap {
+    min-width: 320px;
+    max-width: 720px;
+    margin: auto;
+}
+
+.floating-label {
+    color: #FFF;
+}
+
+.form-control {
+    border-bottom: 1px solid #FFF;
+}
+#login-form {
+    padding: 15px 45px;
+    border-right: 1px solid whitesmoke; 
+}
+
+#login-form .ccd-image{
+    float: right;
+    position: relative;
+    bottom: 25px; 
+    z-index: 1000; 
+    cursor:pointer;
+}
+
+#login-form .floating-label {
+    color: #5C5C5C;
+}
+
+#login-form .form-control {
+    border-bottom: 1px solid #DDD;
+}
+
+#login-form .text-error {
+    position: absolute;
+    color: #f50057;
+}
+
+#app-login-footer {
+    position: fixed;
+    background-color: #212121;
+    color: #fff;
+    padding: 30px;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    left: 15px;
+    text-align: center;
+}
+
+
+/*修复 登录界面 验证码输入框的不对齐 的问题*/
+
+#login-form .form-control,
+#login-form .input-group-addon {
+    border-radius: 0;
+}
+@media (max-height: 740px) {
+    #app-login-footer {
+        display: none;
+    }
+}
+
+/*主页*/
+.nav-item{
+    background-color: #575757;
+}
+.nav-item-icon{
+    top: 2px;
+    position: relative;
+}
+.nav-item-text{
+    margin-right: 1em;
+}
+
+#app-content{
+    width: 960px;
+    margin: 30px auto;
+    min-height: 500px;
+}
+
+#app-nav-ubtn{
+    position: fixed;
+    top: 100px;
+}
+.bg-content{
+    position: fixed;
+    background-color: #333;
+    background-attachment: fixed;
+    background-position: top left;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 450px;
+}
+.bg-content ~ div{
+    position: relative;
+}
+.z-index-top{
+    z-index: 101;
+}
+.z-index-mid{
+    z-index: 100;
+    position: relative;
+}
+.z-index-bottom{
+    z-index: 99;
+}
+.z-index-bg{
+    z-index: 0;
+}
+#itisme .fbtn{
+    display: inline-block;
+}

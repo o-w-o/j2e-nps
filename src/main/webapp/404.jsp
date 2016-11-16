@@ -14,7 +14,7 @@
         <!-- css -->
         <link href="<%=path%>/lib/base.min.css" rel="stylesheet" />
         <link href="<%=path%>/lib/project.min.css" rel="stylesheet" />
-        <link href="<%=path%>/css/nps.css" rel="stylesheet" />
+        <link href="<%=path%>/css/app.css" rel="stylesheet" />
         <link href="<%=path%>/css/page.css" rel="stylesheet" />
         <link href="<%=path%>/css/tools.css" rel="stylesheet" />
     </head>

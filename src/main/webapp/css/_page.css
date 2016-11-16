@@ -1,0 +1,152 @@
+* {
+    outline: none;
+}
+
+html,
+body {
+    width: 100%;
+    font-family: 华文细黑, 文泉驿微米黑, 微软雅黑, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #F5F5F5;
+}
+
+a {
+    /*color: #f50057;*/
+    color: #8b95cb;
+}
+
+a:focus,
+a:hover {
+    outline: none;
+    text-decoration: none;
+}
+
+select {
+    outline: none
+}
+
+body[id^=app] {
+    padding: 0 !important;
+    overflow: unset;
+    min-width: 960px;
+    margin: auto;
+}
+
+/*  &0  异常页面 */
+.lms-status-code{
+    font-size: 50px;
+    font-weight: bold;
+    color: #818181;
+    padding: 25px 0;
+}
+.lms-status-page{
+    width: 500px;
+    margin-top: 15vh !important;
+    padding: 3em;
+}
+.lms-status-e{
+	font-size: 16px;
+	padding-top:1em;
+	margin-left:.3em;
+}
+
+/*  &1  header */
+
+header .nav-item{
+    /*top:3px;*/
+ }
+
+.header-nav> li {
+    transition: all 0.3s;
+}
+
+.header-nav> li:hover {
+    background-color: #34495e;
+    box-shadow: 0 .8px 5px rgba(3, 3, 3, 0.8);
+}
+
+.header-nav> .active {
+    box-shadow: 0 .6px 2px rgba(3, 3, 3, 0.8);
+}
+
+.header-nav> .nav-brand {
+    background-color: transparent;
+    font-size: large;
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 0px 15px;
+    box-shadow: none;
+    position: absolute;
+    left: 45%;
+}
+
+.header-nav> .nav-brand:hover {
+    box-shadow: none;
+    background-color: transparent;
+    border: none;
+    color: #FFF;
+}
+
+.header-nav> .nav-brand> a:hover {
+    box-shadow: none;
+    border: none;
+}
+
+.header-nav> .open {
+    background-color: #34495e;
+    border-bottom: 2px solid #FFFF66;
+}
+
+.header-brand {
+    background-color: #484848;
+    color: #fff;
+}
+
+.header-brand .avatar{
+    border-radius: 0px;
+    height: 56px;
+    width: 56px;
+}
+
+.header-brand .avatar>.icon{
+   transition: all .3s;
+   display: block;
+		height: inherit;
+		width: inherit;
+		text-align: center;
+		text-anchor: end;
+		line-height: 55px;
+}
+.header-brand .avatar>.icon:hover{
+	font-size:2.5em;
+}
+
+.header-brand .dropdown-menu-right {
+    top: 64px;
+    right: 8px;
+    z-index: 1;
+}
+
+
+#tree-footer {
+    background-color: #484848;
+    color: #FFF;
+}
+
+#tree-footer> div {
+    padding: 1em;
+}
+
+#app-content{
+	padding-top:60px;
+}
+
+
+
+#app-ubtn{
+	bottom:95px;
+}
+#app-ubtn #scrollUp{
+	display:block !important;
+	opacity:1 !important;
+}
