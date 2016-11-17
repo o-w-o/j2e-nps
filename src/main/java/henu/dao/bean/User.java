@@ -2,19 +2,20 @@ package henu.dao.bean;
 
 public class User {
 
-    private int id;
+    private String id;
     private String password;
+    private String utype;
     private String email;
     private String name;
     private String uwords;
     private String brithday;
-    private Boolean gender;
+    private String gender;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -58,11 +59,19 @@ public class User {
         this.brithday = brithday;
     }
 
-    public Boolean getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
+    }
+    
+    public String getUtype() {
+        return utype;
+    }
+    
+    public void setUtype(String utype) {
+        this.utype = utype;
     }
 }

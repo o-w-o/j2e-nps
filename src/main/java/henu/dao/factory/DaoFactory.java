@@ -8,11 +8,11 @@ package henu.dao.factory;
 import henu.dao.FriendDao;
 import henu.dao.MsgDao;
 import henu.dao.TableDao;
-import henu.dao.UserDao;
 import henu.dao.impl.FriendDaoImpl;
 import henu.dao.impl.MsgDaoImpl;
 import henu.dao.impl.TableDaoImpl;
 import henu.dao.impl.UserDaoImpl;
+import henu.dao.IUserDao;
 
 /**
  *
@@ -20,7 +20,7 @@ import henu.dao.impl.UserDaoImpl;
  */
 public class DaoFactory {
     
-    public static UserDao getUserDaoInstance(){
+    public static IUserDao getUserDaoInstance(){
         return new UserDaoImpl();
     }
     

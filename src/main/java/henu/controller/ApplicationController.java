@@ -1,7 +1,7 @@
 package henu.controller;
 
 import henu.util.CookieEx;
-import henu.util.DB;
+import henu.util.SqlDB;
 import henu.util.SessionEx;
 import henu.util.StringConvert;
 import java.io.IOException;
@@ -191,7 +191,7 @@ public class ApplicationController extends HttpServlet{
     protected boolean trySignIn(String uid, String password){
         
         String sql = "select * from user where uid='" + uid + "'and password='" + password + "'";
-        ResultSet resultSet = DB.executeQuery(sql);
+        ResultSet resultSet = SqlDB.executeQuery(sql);
         
         try {
             if (resultSet.next()) {
@@ -201,7 +201,7 @@ public class ApplicationController extends HttpServlet{
             Logger.getLogger(ApplicationController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        DB.close();
+        SqlDB.close();
 
         return false;
     }
@@ -214,7 +214,7 @@ public class ApplicationController extends HttpServlet{
     protected boolean isUserExist(String uid) {
         
         String sql = "select * from user where uid='" + uid + "'";
-        ResultSet resultSet = DB.executeQuery(sql);
+        ResultSet resultSet = SqlDB.executeQuery(sql);
         
         try {
             if(resultSet.next()){
@@ -226,7 +226,7 @@ public class ApplicationController extends HttpServlet{
             Logger.getLogger(ApplicationController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        DB.close();
+        SqlDB.close();
 
         return false;
     }
@@ -248,6 +248,18 @@ public class ApplicationController extends HttpServlet{
             }
         }
         
+    }
+    
+    protected static boolean isUser(HttpServletRequest req, HttpServletResponse resp) {
+        return req.getSession().getAttribute("utype") == "user";
+    }
+    
+    protected static  boolean isAdmin(HttpServletRequest req, HttpServletResponse resp) {
+        return req.getSession().getAttribute("utype") == "admin";
+    }
+    
+    protected static  boolean isAnonymous(HttpServletRequest req, HttpServletResponse resp) {
+        return req.getSession().getAttribute("utype") == "anonymous";
     }
 }
 

@@ -39,6 +39,47 @@
         <link href="<%=path%>/lib/jquery.fs.boxer.css" rel="stylesheet" />
         <link href="<%=path%>/css/app.css" rel="stylesheet" />
         <script src="<%=path%>/lib/jquery.min.js"></script>
+        
+        <style>
+            #panel-manageUsers .bootstrap-table{
+                width: 1200px;
+                height: auto;
+                margin: 1em auto;
+                padding: 1em;
+                margin-bottom: 12em;
+                
+            }
+            #panel-manageUsers .fixed-table-body{
+                height: auto;
+            }
+            .fixed-table-toolbar>.btn-group{
+                float: left;
+            }
+            .fixed-table-toolbar button{
+                margin-right: 15px;
+            }
+            .icon-refresh,
+            .icon-list-alt,
+            .icon-plus,
+            .icon-minus{
+                font-style: normal;
+            }
+            .icon-refresh:after{
+                content: "刷新";
+            }
+            .icon-list-alt:after{
+                content: "视图转换";
+            }
+            .icon-plus:after{
+                content: "＋";
+            }
+            .icon-minus:after{
+                content: "×";
+            }
+            .search{
+                float: right;
+            }
+        </style>
     </head>
     <body>
         <!--header-->
@@ -91,25 +132,20 @@
         </header>
 
         <!--App Main Content-->                
-        <div id="app-content" class="container">
+        <div id="app-content" class="">
+            
             <nav class="fbtn-container" id="app-nav-ubtn">
 
 
                 <div class="fbtn-inner">
                     <a class="fbtn btn-grey waves-attach waves-circle waves-light" data-toggle="tab" href="#panel-Index">
-                        <span class="fbtn-text fbtn-text-left">个人面板</span><span class="icon">keyboard_return</span>
+                        <span class="fbtn-text fbtn-text-left">个人面板</span><span class="icon pos-op-3px">keyboard_return</span>
                     </a>
                 </div>
 
                 <div class="fbtn-inner">
-                    <a class="fbtn btn-aqua waves-attach waves-circle waves-light waves-effect"  data-toggle="tab" href="#panel-manageTable">
-                        <span class="fbtn-ori icon">view_list</span><span class="fbtn-text fbtn-text-left">表格管理</span>
-                    </a>
-                </div>
-
-                <div class="fbtn-inner">
-                    <a class="fbtn fbtn-trans waves-attach waves-circle waves-light waves-effect"  data-toggle="tab" href="#panel-manageFriend">
-                        <span class="fbtn-ori icon">people</span><span class="fbtn-text fbtn-text-left">好友管理</span>
+                    <a class="fbtn btn-aqua waves-attach waves-circle waves-light waves-effect"  data-toggle="tab" href="#panel-manageUsers">
+                        <span class="fbtn-ori icon">people</span><span class="fbtn-text fbtn-text-left">用户管理</span>
                     </a>
                 </div>
 
@@ -119,69 +155,52 @@
                     </a>
                 </div>
 
-                <div class="fbtn-inner">
-                    <a class="fbtn fbtn-trans waves-attach waves-circle waves-light" data-toggle="dropdown">
-                        <span class="fbtn-ori icon">more_vert</span><span class="fbtn-sub icon">close</span>
-                    </a>
-                    <div class=" fbtn-dropdown">
-                        <a class="fbtn waves-attach waves-circle waves-light" href="javascript:void(0)">
-                            <span class="fbtn-text fbtn-text-left">反馈</span><span class="icon">bug_report</span>
-                        </a>
-                        <a class="fbtn waves-attach waves-circle" href="javascript:void(0)" >
-                            <span class="fbtn-text fbtn-text-left">关于系统</span><span class="icon">info</span>
-                        </a>
-                    </div>
-                </div>
-
             </nav>
-            <div class="row tab-content">
+            
+            <div class="tab-content">
 
-                <div id="panel-Index" class="tab-pane fade in active">
+                <!--控制面板-->
+                <div id="panel-Index" class="container tab-pane fade in active">
                     <div class="bg-content z-index-bg"></div>
                     <!-- 个人面板 -->
-                    <div class="col-md-12"> 
-                        <div class="card">
+                    <div class="row"> 
+                        <div class="card col-md-12">
 
                             <div class="card-main">
                                 <div class="card-inner">
-                                    <div class="card-heading">这就是我</div>
+                                    <div class="card-heading">控制面板</div>
                                     <div id="itisme">
-                                        <a  href="javascript:void(0)" class='fbtn btn-golden'>
-                                            A<span class="fbtn-text fbtn-text-left">Sample Tips</span>
-                                        </a>
-                                        <div class="fbtn btn-alizarin">13</div>
-                                        <div class="fbtn btn-alizarin">12</div>
-                                        <div class="fbtn btn-alizarin">13</div>
-                                        <div class="fbtn btn-alizarin">13</div>
+
+
+                                        <ul class="">
+                                            <li><a id="ajax-test">TEST</a></li>
+                                            <li><a id="ajax-getall">TEST GET ALL USER INFO JSON</a></li>
+
+                                            <p id="test"></p>
+                                        </ul> 
                                     </div>
                                 </div>
                                 <div class="card-action">
                                     <div class="card-action-btn" style="margin:6px 16px;">
-                                        <a href="dean/pinfo" class="btn btn-flat lms-c-text-light stage-card waves-attach pull-right" style="text-align: right;"> 查看 / 修改 个人信息<span class="icon margin-left-sm">open_in_new</span> </a>
+                                        <a href="javascript:void(0);" 
+                                           class="btn btn-flat lms-c-text-light stage-card waves-attach pull-right" 
+                                           style="text-align: right;"> 查看 / 修改 个人信息
+                                            <span class="icon margin-left-sm">open_in_new</span> 
+                                        </a>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    <div class="col-md-12"> 
-                        <div class="card">
+                    <div class="row"> 
+                        <div class="card col-md-12">
 
                             <div class="card-main">
                                 <div class="card-inner">
-                                    <div class="card-heading">Sample Title</div>
+                                    <div class="card-heading">服务器信息</div>
                                     <div class="sample-height">
-
-                                        <ul class="">
-                                            <li><a id="ajax-test">TEST</a></li>
-                                            <p id="test"></p>
-                                        </ul>
-
-                                    </div>
-                                </div>
-                                <div class="card-action">
-                                    <div class="card-action-btn" style="margin:6px 16px;">
-                                        <a href="dean/pinfo" class="btn btn-flat lms-c-text-light stage-card waves-attach pull-right" style="text-align: right;"> 查看 / 修改 个人信息<span class="icon margin-left-sm">open_in_new</span> </a>
+                                        <iframe onload ="startInit('EnvInfo', 500);"  src="<%=path%>/admin/env" id="EnvInfo" frameborder="0" scrolling="no" marginheight="0"  width="100%" name="服务器信息" ></iframe> 
                                     </div>
                                 </div>
                             </div>
@@ -193,16 +212,49 @@
 
                 </div>
 
-                <div id="panel-manageTable" class="tab-pane fade">
-                    
+                <!--用户管理-->                    
+                <div id="panel-manageUsers" class="container-fuild tab-pane fade">
+                    <table data-toggle="table" data-url="<%=path%>/admin?target=getallinfo" 
+                           data-pagination="ture"
+                           data-search="ture"
+                           data-search-on-enter-key="ture"
+                           data-show-toggle="ture"
+                           data-show-refresh="ture"
+                           data-sort-stable="ture"
+                           data-toolbar-align="left"
+                           data-id-field="id"
+                           data-page-size="25"
+                           
+                           >
+                        <thead>
+                            <tr>
+                                <th data-field="id" data-sortable="ture">User ID</th>
+                                <th data-field="utype">User Type</th>
+                                <th data-field="name">User Name</th>
+                                <th data-field="gender" >User Gender</th>
+                                <th data-field="brithday" >User Birthday</th>
+                                <th data-field="email" >User Email</th>
+                                <th data-field="uwords" >User Introduction</th>
+                                <th data-field="password">User Password</th>
+                                <th>Reset Password</th>
+                            </tr>
+                        </thead>
+                    </table>
                 </div>
 
-                <div id="panel-manageFriend" class="tab-pane fade">
-                    
-                </div>
-
-                <div id="panel-manageInbox" class="tab-pane fade">
-                    
+                <!--消息管理-->
+                <div id="panel-manageInbox" class="container tab-pane fade">
+                    <div id="msg-list" class="card sample-height">
+                        <div class="card-main">
+                            <div class="card-inner">
+                                <div class="card-heading">消息列表</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div id="msg-detial">
+                        
+                    </div>
                 </div>
 
             </div>
@@ -212,29 +264,11 @@
             
             <!--用户功能集 END-->
         </div>
-
-
-        <!--ubtn-->
-        <div class="fbtn-container" id="app-ubtn">
-
-            <div class="fbtn-inner" id="msgBox">
-                <a class="fbtn fbtn-red waves-attach waves-circle waves-light" href="javascript:void(0)">
-                    <span class="fbtn-text fbtn-text-left">消息盒子</span><span class="icon">message</span>
-                </a>
-            </div>
-
-            <div class="fbtn-inner" id="postNew">
-                <a class="fbtn btn-gold waves-attach waves-circle waves-light waves-effect" >
-                    <span class="fbtn-ori icon">add</span><span class="fbtn-text fbtn-text-left">创建新表</span>
-                </a>
-            </div>
-
-            <div class="fbtn-inner" id="scrollUp">
-                <a class="fbtn fbtn-trans waves-attach waves-circle waves-light waves-effect" >
-                    <span class="fbtn-ori icon">keyboard_arrow_up</span><span class="fbtn-text fbtn-text-left">返回顶部</span>
-                </a>
-            </div>
-
+                           
+        <div class="fbtn-inner" id="scrollUp">
+            <a class="fbtn fbtn-trans waves-attach waves-circle waves-light waves-effect" >
+                <span class="fbtn-ori icon">keyboard_arrow_up</span><span class="fbtn-text fbtn-text-left">返回顶部</span>
+            </a>
         </div>
         
         <!--单向信息传递 snackbar-->
@@ -277,6 +311,10 @@
         <script src="<%=path%>/lib/jquery.fs.boxer.min.js" type="text/javascript"></script>
         <script src="<%=path%>/lib/jquery.scrollUp.min.js" type="text/javascript"></script>
         <script src="<%=path%>/js/api.common.js" type="text/javascript"></script>
+        <script src="<%=path%>/js/api.administrator.js" type="text/javascript"></script>
+        <link href="<%=path%>/lib/datagird/dist/bootstrap-table.min.css" rel="stylesheet" type="text/css"/>
+        <script src="<%=path%>/lib/datagird/dist/bootstrap-table.min.js" type="text/javascript"></script>
+        <script src="<%=path%>/lib/datagird/dist/locale/bootstrap-table-zh-CN.min.js" type="text/javascript"></script>
         <script>NProgress.done();</script>
         <script>
              //返回顶部 插件 scrollUp 配置
@@ -296,12 +334,48 @@
 		                scrollImg: false,            // Set true to use image
 		                activeOverlay: false,    // Set CSS color to display scrollUp active point, e.g '#00FFFF'
 		                zIndex: 2000                 // Z-Index for the overlay
-		                            }); });
+		                            
+                    }); 
+                });
              $('#ajax-test').click(function(){
                  
                 $.ajax({
                    url: "<%=path%>/app?target=test",
                    type: 'get',
+                   async: false,
+                   success: function (data) {
+                       console.log(data);
+                       $('#test').html(data);
+                       status = 0;
+                   },
+                   error: function () {
+                       status = -1;
+                   }
+               });
+               
+             });
+             $('#ajax-getall').click(function(){
+                 
+                $.ajax({
+                   url: "<%=path%>/admin?target=getallinfo",
+                   type: 'get',
+                   async: false,
+                   success: function (data) {
+                       console.log(data);
+                       $('#test').html(data);
+                       status = 0;
+                   },
+                   error: function () {
+                       status = -1;
+                   }
+               });
+               
+             });
+             $('#ajax-autoadd').click(function(){
+                 
+                $.ajax({
+                   url: "<%=path%>/admin?target=autoadd",
+                   type: 'post',
                    async: false,
                    success: function (data) {
                        console.log(data);
@@ -337,6 +411,41 @@
                window.top.location = "<%=path%>/";
             }
         </script>
+        <script type="text/javascript">
+            var browserVersion = window.navigator.userAgent.toUpperCase();
+            var isOpera = false, isFireFox = false, isChrome = false, isSafari = false, isIE = false;
+            function reinitIframe(iframeId, minHeight) {
+                try {
+                    var iframe = document.getElementById(iframeId);
+                    var bHeight = 0;
+                    if (isChrome == false && isSafari == false)
+                        bHeight = iframe.contentWindow.document.body.scrollHeight;
+                    var dHeight = 0;
+                    if (isFireFox == true)
+                        dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+                    else if (isIE == false && isOpera == false)
+                        dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+                    else if (isIE == true && !-[1, ] == false) {
+                    } //ie9+
+                    else
+                        bHeight += 3;
+                    var height = Math.max(bHeight, dHeight);
+                    if (height < minHeight)
+                        height = minHeight;
+                    iframe.style.height = height + "px";
+                } catch (ex) {
+                }
+            }
+            function startInit(iframeId, minHeight) {
+                isOpera = browserVersion.indexOf("OPERA") > -1 ? true : false;
+                isFireFox = browserVersion.indexOf("FIREFOX") > -1 ? true : false;
+                isChrome = browserVersion.indexOf("CHROME") > -1 ? true : false;
+                isSafari = browserVersion.indexOf("SAFARI") > -1 ? true : false;
+                if (!!window.ActiveXObject || "ActiveXObject" in window)
+                    isIE = true;
+                window.setInterval("reinitIframe('" + iframeId + "'," + minHeight + ")", 100);
+            }   
+        </script>  
         
     </body>
 </html>

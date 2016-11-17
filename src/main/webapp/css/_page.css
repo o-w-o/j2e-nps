@@ -146,7 +146,10 @@ header .nav-item{
 #app-ubtn{
 	bottom:95px;
 }
-#app-ubtn #scrollUp{
-	display:block !important;
-	opacity:1 !important;
+
+#scrollUp{
+    display:block !important;
+    opacity:1 !important;
+    right: 16px;
+    bottom: 12px;
 }

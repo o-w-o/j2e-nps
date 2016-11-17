@@ -544,3 +544,8 @@ body.stage-image{
 .sample-height{
 	min-height:2000px;
 }
+
+.pos-op-3px{
+    top: 3px;
+    position: relative;
+}
